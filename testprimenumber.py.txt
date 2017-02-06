@@ -1,11 +1,48 @@
+#testing python prime numbers program
 import unittest
 
 class Tddprimenumbers(unittest.Testcase):
+#first test if it is a prime number
  def prime(self):
     self.inputno=inputnumber()
 	
   def test_inputnumber_method_returns_prime(self):
-      prime=self.inputno()
+      prime=self.inputno.range(2,20)
+	  self.assertEqual(8,prime)
+	# second test if the variable user inputs is a number  
+ def  test_inputnumber_return_error_message_is_both_args_not_numbers(self):
+      self.assertraises(ValueError, self.inputno.range, 'two', 'twenty')
+	  
+ # third test if the variable user inputs is one  
+ def  test_inputnumber_return_error_message_is_one(self):
+ self.assertraises(ValuseError,self.inputno.range,'one')
+ 
+ # forth test if the variable user inputs is infinite  
+ def  test_inputnumber_return_error_message_is_infinite(self):
+ self.assertraises(ValuseError,self.inputno.range,'toolarge', 'prime')
+ 
+ # fifth test if the variable user inputs is not less than one   
+ def  test_inputnumber_return_message_is_both_args_not_less_than_one(self):
+ self.assertEqual('prime')
+ 
+  # sixth test if the variable user inputs is less than one   
+ def  test_inputnumber_return_error_message_is_both_args_less_than_one(self):
+ self.assertraises(ValuseError,self.inputno.range,'toosmall', 'notprime')
+ 
+  # seventh test if the variable user inputs has decimals 
+ def  test_inputnumber_return_error_message_is_both_args_not_divisible_any_number(self):
+ self.assertraises(ValuseError,self.inputno.range,'notprime')
+ 
+  # eighth test if the variable user inputs is a number  
+ def  test_inputnumber_return_error_message_is_both_args_only_divisibal_by_one_itself(self):
+ self.assertEqual('prime')
+ 
+  # nineth test if the variable user inputs is a number  
+ def  test_inputnumber_return_error_message_is_both_args_not_decimals(self):
+ 
+ self.assertEqual('notprime')
+  # tenth test if the variable user inputs is a number  
+ def  test_inputnumber_return_error_message_is_both_args_range(self):
+ self.assertEqual('prime')
 
-if __prime__ == '__main__':
-    unittest.main()
+ 
