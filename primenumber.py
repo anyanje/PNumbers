@@ -17,4 +17,6 @@ def isprimeno(num):
  # Give the out put
  print(num,"is prime"):
  
- 
+ # if number inputed is less than or equal to zero or one,it is not a prime
+ else:
+ print(num,"not prime"):
